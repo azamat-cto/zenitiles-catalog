@@ -441,6 +441,7 @@ export default function Home() {
                 height={img.height}
                 priority
               />
+              <p>{img.alt}</p>
             </article>
           ))}
         </div>
