@@ -51,6 +51,7 @@ import Image49 from "@/assets/images/img-49.jpg";
 import Image50 from "@/assets/images/img-50.jpg";
 import Image51 from "@/assets/images/img-51.jpg";
 import Image52 from "@/assets/images/img-52.jpg";
+import ZenitilesLogo from "@/assets/logo/zenitiles-logo.jpg"
 
 type Image = {
   key: number;
@@ -431,8 +432,11 @@ export default function Home() {
   return (
     <section>
       <div className="container">
+        <div className="grid justify-center gap-x-4 pt-8 pb-4 border-b">
+          <Image className="w-[200px]" src={ZenitilesLogo} alt="Zenitiles logo" />
+        </div>
         <div className="grid sm:grid-cols-2 gap-x-4 gap-y-6 pt-8">
-          {images.map((img) => (
+          {images.map((img, idx) => (
             <article key={img.key}>
               <Image
                 src={img.path}
@@ -441,7 +445,7 @@ export default function Home() {
                 height={img.height}
                 priority
               />
-              <p>{img.alt}</p>
+              <p>{idx+1}</p>
             </article>
           ))}
         </div>
